@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/coverFragment">
 
+    <fragment
+        android:id="@+id/coverFragment"
+        android:name="com.example.chemulator.CoverFragment"
+        android:label="fragment_cover"
+        tools:layout="@layout/fragment_cover" >
+        <action
+            android:id="@+id/action_coverFragment_to_calcListFragment"
+            app:destination="@id/calcListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calcListFragment"
+        android:name="com.example.chemulator.CalcListFragment"
+        android:label="fragment_calc_list"
+        tools:layout="@layout/fragment_calc_list" />
 </navigation>

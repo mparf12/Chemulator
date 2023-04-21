@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "312106750427",
+    "project_id": "chemulator-68c39",
+    "storage_bucket": "chemulator-68c39.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312106750427:android:0739fbac2a9bea145017fe",
+        "android_client_info": {
+          "package_name": "com.example.chemulator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312106750427-2c4nl01hlm1g397451d7hngf0i9hksfh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnJ4kXS-K9L67GW5-1flquLnCv0YysqMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312106750427-2c4nl01hlm1g397451d7hngf0i9hksfh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
