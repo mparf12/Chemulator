@@ -18,5 +18,14 @@
         android:id="@+id/calcListFragment"
         android:name="com.example.chemulator.CalcListFragment"
         android:label="fragment_calc_list"
-        tools:layout="@layout/fragment_calc_list" />
+        tools:layout="@layout/fragment_calc_list" >
+        <action
+            android:id="@+id/action_calcListFragment_to_molarMassFragment"
+            app:destination="@id/molarMassFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/molarMassFragment"
+        android:name="com.example.chemulator.MolarMassFragment"
+        android:label="fragment_molar_mass"
+        tools:layout="@layout/fragment_molar_mass" />
 </navigation>

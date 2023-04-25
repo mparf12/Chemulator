@@ -13,17 +13,19 @@ class CalcListFragment : Fragment() {
 
     private var _binding: FragmentCalcListBinding? = null
     private val binding get() = _binding!!
-
+    val calcs = listOf(Calculator("Molar Mass", R.drawable.mass), Calculator("Stoichiometry", R.drawable.flasktime))
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentCalcListBinding.inflate(inflater, container, false)
+        val rootView = binding.root
 
 
+        val mAdapter = CalculatorAdapter(calcs)
+        binding.recyclerView.adapter = mAdapter
+        return rootView
 
-
-        return binding.root
     }
 
 
