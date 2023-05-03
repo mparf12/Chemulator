@@ -5,10 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SeekBar
 import com.example.chemulator.databinding.FragmentMolarMassBinding
+import kotlin.math.roundToLong
 
 
 class MolarMassFragment : Fragment() {
+    var cmon = 2
     val elements = listOf(
         Element("H", 1.008),
         Element("He", 4.003),
@@ -91,6 +94,8 @@ class MolarMassFragment : Fragment() {
             var comp = binding.inputCom.text
             var mass = 0.0
             var umHelloChris = false
+
+
             for (i in 0..comp.length) {
 umHelloChris = false
                 //two letter elements
@@ -98,10 +103,17 @@ umHelloChris = false
                      if (i+2 <= comp.length) {
                          if (element.symbol == comp.substring(i, i + 2)) {
                              if (i + 3 <= comp.length && comp.substring(i + 2, i + 3)
-                                     .toIntOrNull() != null
-                             ) {
-                                 mass += element.mass * comp.substring(i + 2, i + 3).toDouble()
-                                 umHelloChris = true
+                                     .toIntOrNull() != null) {
+
+                                if(i + 4 <= comp.length && comp.substring(i + 2, i + 4).toIntOrNull() != null){
+                                    mass += element.mass * comp.substring(i + 2, i + 4).toDouble()
+                                    umHelloChris = true
+                                    }
+                                    else{
+                                    mass += element.mass * comp.substring(i + 2, i + 3).toDouble()
+                                    umHelloChris = true
+                                }
+
                              } else {
                                  mass += element.mass
                                  umHelloChris = true
@@ -115,10 +127,17 @@ umHelloChris = false
                             if (i + 1 <= comp.length) {
                                 if (element.symbol == comp.substring(i, i + 1)) {
                                     if (i + 2 <= comp.length && comp.substring(i + 1, i + 2)
-                                            .toIntOrNull() != null
-                                    ) {
-                                        mass += element.mass * comp.substring(i + 1, i + 2)
-                                            .toDouble()
+                                            .toIntOrNull() != null) {
+
+                                        if(i+3 <= comp.length && comp.substring(i+1, i + 3).toIntOrNull() != null){
+                                            mass += element.mass * comp.substring(i + 1, i + 3)
+                                                .toDouble()
+                                        }
+                                        else{
+                                            mass += element.mass * comp.substring(i + 1, i + 2)
+                                                .toDouble()
+                                        }
+
                                     } else {
                                         mass += element.mass
                                     }
@@ -127,12 +146,46 @@ umHelloChris = false
                         }
                     }
             }
-            binding.mass.text = mass.toString()
+              if(cmon == 0)
+            binding.mass.text = "${"%.0f".format(mass)} grams"
+            if(cmon == 1)
+                binding.mass.text = "${"%.1f".format(mass)} grams"
+            if(cmon == 2)
+                binding.mass.text = "${"%.2f".format(mass)} grams"
+            if(cmon == 3)
+                binding.mass.text = "${"%.3f".format(mass)} grams"
+            if(cmon == 4)
+                binding.mass.text = "${"%.4f".format(mass)} grams"
+            if(cmon == 5)
+                binding.mass.text = "${"%.5f".format(mass)} grams"
+            if(cmon == 6)
+                binding.mass.text = "${"%.6f".format(mass)} grams"
+            if(cmon == 7)
+                binding.mass.text = "${"%.7f".format(mass)} grams"
+            if(cmon == 8)
+                binding.mass.text = "${"%.8f".format(mass)} grams"
         }
 
-
+        setUpSeekBar()
         return rootView
     }
 
+    fun setUpSeekBar(){
+        binding.decimal.text = "2"
+        binding.decBar.progress = 2
+        binding.decBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar, newProgressValue: Int, fromUser: Boolean) {
+          binding.decimal.text = newProgressValue.toString()
+           cmon = newProgressValue
+
+
+            }
+            override fun onStartTrackingTouch(p0: SeekBar?) {}
+            override fun onStopTrackingTouch(p0: SeekBar?) {
+
+            }
+        })
+
+    }
 
 }

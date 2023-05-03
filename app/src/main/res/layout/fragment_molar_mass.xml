@@ -4,9 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MolarMassFragment"
-    android:background="#CAF4CC">
+    android:background="#CAF4CC"
+    tools:context=".MolarMassFragment">
 
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:text="8"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/archivo"
+        app:layout_constraintBottom_toBottomOf="@+id/decBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/decBar"
+        app:layout_constraintTop_toTopOf="@+id/decBar" />
+
+    <TextView
+        android:id="@+id/decimal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/archivo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:text="Decimals:"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/archivo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/inputCom"
@@ -14,6 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:ems="10"
+        android:gravity="center"
         android:hint="Enter Compound"
         android:inputType="textPersonName"
         android:textSize="30sp"
@@ -25,31 +64,33 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40sp"
-        android:layout_marginTop="150dp"
         android:text="Mass:"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:fontFamily="@font/archivo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputCom" />
-
-    <TextView
-        android:id="@+id/mass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
         android:textSize="35sp"
         android:textStyle="bold"
         app:fontFamily="@font/archivo"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView3"
-        app:layout_constraintStart_toEndOf="@+id/textView3" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/decimal" />
+
+    <TextView
+        android:id="@+id/mass"
+        android:layout_width="220dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="Mass will appear here"
+        android:textColor="#75686868"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/archivo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
         android:id="@+id/calc"
         android:layout_width="200dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="30dp"
         android:text="Calculate"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -58,4 +99,41 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_baseline_arrow_downward_24"
+        app:layout_constraintBottom_toTopOf="@+id/calc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <SeekBar
+        android:id="@+id/decBar"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="100dp"
+        android:max="8"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputCom" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="0"
+
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/archivo"
+        app:layout_constraintBottom_toBottomOf="@+id/decBar"
+        app:layout_constraintEnd_toStartOf="@+id/decBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/decBar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,6 +21,12 @@ class CalculatorViewHolder(val binding: ListItemLayoutBinding) :
             if(currentCalculator.name == "Molar Mass")
             binding.root.findNavController()
                 .navigate(R.id.action_calcListFragment_to_molarMassFragment)
+
+            if(currentCalculator.name == "Stoichiometry")
+                binding.root.findNavController()
+                    .navigate(R.id.action_calcListFragment_to_stoFragment)
+
+
         }
     }
 

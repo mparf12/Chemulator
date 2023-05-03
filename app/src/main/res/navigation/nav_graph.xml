@@ -22,10 +22,18 @@
         <action
             android:id="@+id/action_calcListFragment_to_molarMassFragment"
             app:destination="@id/molarMassFragment" />
+        <action
+            android:id="@+id/action_calcListFragment_to_stoFragment"
+            app:destination="@id/stoFragment" />
     </fragment>
     <fragment
         android:id="@+id/molarMassFragment"
         android:name="com.example.chemulator.MolarMassFragment"
         android:label="fragment_molar_mass"
         tools:layout="@layout/fragment_molar_mass" />
+    <fragment
+        android:id="@+id/stoFragment"
+        android:name="com.example.chemulator.stoFragment"
+        android:label="fragment_sto"
+        tools:layout="@layout/fragment_sto" />
 </navigation>
