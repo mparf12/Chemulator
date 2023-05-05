@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#CAF4CC"
-    tools:context=".MolarMassFragment">
+    tools:context=".MolarMassFragment"
+    >
 
 
     <TextView
@@ -47,7 +48,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/inputCom"
+        android:id="@+id/inputCom2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -77,8 +78,7 @@
         android:layout_width="220dp"
         android:layout_height="100dp"
         android:gravity="center"
-        android:text="Mass will appear here"
-        android:textColor="#75686868"
+        android:textColor="#75151515"
         android:textSize="30sp"
         android:textStyle="bold"
         app:fontFamily="@font/archivo"
@@ -90,7 +90,7 @@
         android:id="@+id/calc"
         android:layout_width="200dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="4dp"
         android:text="Calculate"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -98,6 +98,7 @@
         app:fontFamily="@font/archivo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -119,7 +120,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputCom" />
+        app:layout_constraintTop_toBottomOf="@+id/inputCom2" />
 
     <TextView
         android:id="@+id/textView5"

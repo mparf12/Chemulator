@@ -18,7 +18,9 @@ class stoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val rootView = binding.root
+       binding.calcy.setOnClickListener { view ->
 
+       }
 
 
 

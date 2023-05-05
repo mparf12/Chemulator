@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.SeekBar
 import com.example.chemulator.databinding.FragmentMolarMassBinding
 import kotlin.math.roundToLong
@@ -91,7 +92,7 @@ class MolarMassFragment : Fragment() {
         _binding = FragmentMolarMassBinding.inflate(inflater, container, false)
         val rootView = binding.root
         binding.calc.setOnClickListener { view ->
-            var comp = binding.inputCom.text
+            var comp = binding.inputCom2.text
             var mass = 0.0
             var umHelloChris = false
 
@@ -145,7 +146,10 @@ umHelloChris = false
                             }
                         }
                     }
+
+
             }
+
               if(cmon == 0)
             binding.mass.text = "${"%.0f".format(mass)} grams"
             if(cmon == 1)
@@ -164,6 +168,9 @@ umHelloChris = false
                 binding.mass.text = "${"%.7f".format(mass)} grams"
             if(cmon == 8)
                 binding.mass.text = "${"%.8f".format(mass)} grams"
+            binding.mass.visibility = View.VISIBLE
+            val animationFadeIn = AnimationUtils.loadAnimation(this.context, R.anim.fade_in)
+            binding.mass.startAnimation(animationFadeIn)
         }
 
         setUpSeekBar()
