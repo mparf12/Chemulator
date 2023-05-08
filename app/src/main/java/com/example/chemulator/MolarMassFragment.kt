@@ -92,7 +92,7 @@ class MolarMassFragment : Fragment() {
         _binding = FragmentMolarMassBinding.inflate(inflater, container, false)
         val rootView = binding.root
         binding.calc.setOnClickListener { view ->
-            var comp = binding.inputCom2.text
+            var comp = binding.viewtime.text
             var mass = 0.0
             var umHelloChris = false
 
