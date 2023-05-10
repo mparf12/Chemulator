@@ -97,9 +97,27 @@ class stoFragment : Fragment() {
            var re1 = binding.re1.text
            var re2 = binding.re2.text
            var re3 = binding.re3.text
-           var re1co = binding.re1.text.toString().substring(0 , binding.re1.text.indexOf("{"))
-           //var re2co
-           //var re3co
+
+           if((getMassFromText(re1.toString())/getMass(re1.toString()))/getCoFromText(re1.toString()) <= (getMassFromText(re2.toString())/getMass(re2.toString()))/getCoFromText(re2.toString())){
+               if((getMassFromText(re1.toString())/getMass(re1.toString()))/getCoFromText(re1.toString()) <= (getMassFromText(re3.toString())/getMass(re3.toString()))/getCoFromText(re3.toString())) {
+                   binding.p1Mass.text = (getCoFromText(p1.toString())/getCoFromText(re1.toString()) * (getMassFromText(re1.toString())/getMass(re1.toString()))).toString()
+// fix the shit
+               }
+               else{
+                   //limiting is re3
+               }
+           }
+           else{
+               if((getMassFromText(re2.toString())/getMass(re2.toString()))/getCoFromText(re2.toString()) <= (getMassFromText(re2.toString())/getMass(re2.toString()))/getCoFromText(re2.toString())) {
+                  //limiting is re2
+               }
+               else{
+                   //limiting is re3
+               }
+           }
+
+
+
 
        }
 
@@ -163,6 +181,17 @@ class stoFragment : Fragment() {
 
         }
     return mass
+    }
+    fun getCoFromText(comp: String): Int{
+        if(comp.toString() != ""){
+            return comp.substring(0 , comp.indexOf("(")).toInt()
+        }
+      else{
+          return 100000000
+        }
+    }
+    fun getMassFromText(comp: String): Double{
+        return comp.substring(comp.indexOf("{") + 1, comp.lastIndexOf("}")).toDouble()
     }
 
 
