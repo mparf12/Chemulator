@@ -11,6 +11,39 @@
 
 
     <TextView
+        android:id="@+id/p3Mass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/archivo"
+        app:layout_constraintBaseline_toBaselineOf="@+id/p3"
+        app:layout_constraintStart_toEndOf="@+id/p3" />
+
+    <TextView
+        android:id="@+id/p2Mass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/archivo"
+        app:layout_constraintBaseline_toBaselineOf="@+id/p2"
+        app:layout_constraintStart_toEndOf="@+id/p2" />
+
+    <TextView
+        android:id="@+id/p1Mass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/archivo"
+        app:layout_constraintBaseline_toBaselineOf="@+id/p1"
+        app:layout_constraintStart_toEndOf="@+id/p1" />
+
+    <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -159,16 +192,5 @@
         android:inputType="textPersonName"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView7"
         app:layout_constraintStart_toEndOf="@+id/textView7" />
-
-    <TextView
-        android:id="@+id/p1Mass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:fontFamily="@font/archivo"
-        app:layout_constraintBaseline_toBaselineOf="@+id/p1"
-        app:layout_constraintStart_toEndOf="@+id/p1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

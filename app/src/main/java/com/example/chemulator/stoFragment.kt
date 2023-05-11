@@ -1,6 +1,7 @@
 package com.example.chemulator
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -101,18 +102,41 @@ class stoFragment : Fragment() {
            if((getMassFromText(re1.toString())/getMass(re1.toString()))/getCoFromText(re1.toString()) <= (getMassFromText(re2.toString())/getMass(re2.toString()))/getCoFromText(re2.toString())){
                if((getMassFromText(re1.toString())/getMass(re1.toString()))/getCoFromText(re1.toString()) <= (getMassFromText(re3.toString())/getMass(re3.toString()))/getCoFromText(re3.toString())) {
                    binding.p1Mass.text = (getCoFromText(p1.toString())/getCoFromText(re1.toString()) * (getMassFromText(re1.toString())/getMass(re1.toString()))).toString()
-// fix the shit
+                  if(p2.toString() != ""){
+                      binding.p2Mass.text = (getCoFromText(p2.toString())/getCoFromText(re1.toString()) * (getMassFromText(re1.toString())/getMass(re1.toString()))).toString()
+                  }
+                   if(p3.toString() != ""){
+                       binding.p3Mass.text = (getCoFromText(p3.toString())/getCoFromText(re1.toString()) * (getMassFromText(re1.toString())/getMass(re1.toString()))).toString()
+                   }
                }
                else{
-                   //limiting is re3
+                   binding.p1Mass.text = (getCoFromText(p1.toString())/getCoFromText(re3.toString()) * (getMassFromText(re3.toString())/getMass(re3.toString()))).toString()
+                   if(p2.toString() != ""){
+                       binding.p2Mass.text = (getCoFromText(p2.toString())/getCoFromText(re3.toString()) * (getMassFromText(re3.toString())/getMass(re3.toString()))).toString()
+                   }
+                   if(p3.toString() != ""){
+                       binding.p3Mass.text = (getCoFromText(p3.toString())/getCoFromText(re3.toString()) * (getMassFromText(re3.toString())/getMass(re3.toString()))).toString()
+                   }
                }
            }
            else{
                if((getMassFromText(re2.toString())/getMass(re2.toString()))/getCoFromText(re2.toString()) <= (getMassFromText(re2.toString())/getMass(re2.toString()))/getCoFromText(re2.toString())) {
-                  //limiting is re2
+                   binding.p1Mass.text = (getCoFromText(p1.toString())/getCoFromText(re2.toString()) * (getMassFromText(re2.toString())/getMass(re2.toString()))).toString()
+                   if(p2.toString() != ""){
+                       binding.p2Mass.text = (getCoFromText(p2.toString())/getCoFromText(re2.toString()) * (getMassFromText(re2.toString())/getMass(re2.toString()))).toString()
+                   }
+                   if(p3.toString() != ""){
+                       binding.p3Mass.text = (getCoFromText(p3.toString())/getCoFromText(re2.toString()) * (getMassFromText(re2.toString())/getMass(re2.toString()))).toString()
+                   }
                }
                else{
-                   //limiting is re3
+                   binding.p1Mass.text = (getCoFromText(p1.toString())/getCoFromText(re3.toString()) * (getMassFromText(re3.toString())/getMass(re3.toString()))).toString()
+                   if(p2.toString() != ""){
+                       binding.p2Mass.text = (getCoFromText(p2.toString())/getCoFromText(re3.toString()) * (getMassFromText(re3.toString())/getMass(re3.toString()))).toString()
+                   }
+                   if(p3.toString() != ""){
+                       binding.p3Mass.text = (getCoFromText(p3.toString())/getCoFromText(re3.toString()) * (getMassFromText(re3.toString())/getMass(re3.toString()))).toString()
+                   }
                }
            }
 
@@ -183,7 +207,7 @@ class stoFragment : Fragment() {
     return mass
     }
     fun getCoFromText(comp: String): Int{
-        if(comp.toString() != ""){
+        if(comp != ""){
             return comp.substring(0 , comp.indexOf("(")).toInt()
         }
       else{
@@ -191,7 +215,13 @@ class stoFragment : Fragment() {
         }
     }
     fun getMassFromText(comp: String): Double{
-        return comp.substring(comp.indexOf("{") + 1, comp.lastIndexOf("}")).toDouble()
+        if(comp != "") {
+            return comp.substring(comp.indexOf("{") + 1, comp.lastIndexOf("}")).toDouble()
+        }
+       else{
+           return 0.00000000000000000000000000000000000000000000001
+        }
+
     }
 
 
