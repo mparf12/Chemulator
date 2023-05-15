@@ -101,7 +101,7 @@ class stoFragment : Fragment() {
 
            if((getMassFromText(re1.toString())/getMass(re1.toString()))/getCoFromText(re1.toString()) <= (getMassFromText(re2.toString())/getMass(re2.toString()))/getCoFromText(re2.toString())){
                if((getMassFromText(re1.toString())/getMass(re1.toString()))/getCoFromText(re1.toString()) <= (getMassFromText(re3.toString())/getMass(re3.toString()))/getCoFromText(re3.toString())) {
-                   binding.p1Mass.text = (getCoFromText(p1.toString())/getCoFromText(re1.toString()) * (getMassFromText(re1.toString())/getMass(re1.toString()))).toString()
+                   binding.p1Mass.text = ((((getMassFromText(re1.toString()))/(getMass(re1.toString()))) * getMass(p1.toString())) * ((getCoFromText(p1.toString()))/(getCoFromText(re1.toString())))).toString()
                   if(p2.toString() != ""){
                       binding.p2Mass.text = (getCoFromText(p2.toString())/getCoFromText(re1.toString()) * (getMassFromText(re1.toString())/getMass(re1.toString()))).toString()
                   }
@@ -206,12 +206,12 @@ class stoFragment : Fragment() {
         }
     return mass
     }
-    fun getCoFromText(comp: String): Int{
+    fun getCoFromText(comp: String): Double{
         if(comp != ""){
-            return comp.substring(0 , comp.indexOf("(")).toInt()
+            return comp.substring(0 , comp.indexOf("(")).toDouble()
         }
       else{
-          return 100000000
+          return 100000000.0
         }
     }
     fun getMassFromText(comp: String): Double{
