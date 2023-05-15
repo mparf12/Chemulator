@@ -98,51 +98,58 @@ class stoFragment : Fragment() {
            var re1 = binding.re1.text
            var re2 = binding.re2.text
            var re3 = binding.re3.text
+            var mass1 = 0.0
+           var mass2 = 0.0
+           var mass3 = 0.0
 
            if((getMassFromText(re1.toString())/getMass(re1.toString()))/getCoFromText(re1.toString()) <= (getMassFromText(re2.toString())/getMass(re2.toString()))/getCoFromText(re2.toString())){
                if((getMassFromText(re1.toString())/getMass(re1.toString()))/getCoFromText(re1.toString()) <= (getMassFromText(re3.toString())/getMass(re3.toString()))/getCoFromText(re3.toString())) {
-                   binding.p1Mass.text = ((((getMassFromText(re1.toString()))/(getMass(re1.toString()))) * getMass(p1.toString())) * ((getCoFromText(p1.toString()))/(getCoFromText(re1.toString())))).toString()
+                   mass1 = ((((getMassFromText(re1.toString()))/(getMass(re1.toString()))) * getMass(p1.toString())) * ((getCoFromText(p1.toString()))/(getCoFromText(re1.toString()))))
                   if(p2.toString() != ""){
-                      binding.p2Mass.text = (getCoFromText(p2.toString())/getCoFromText(re1.toString()) * (getMassFromText(re1.toString())/getMass(re1.toString()))).toString()
+                      mass2 = ((((getMassFromText(re1.toString()))/(getMass(re1.toString()))) * getMass(p2.toString())) * ((getCoFromText(p2.toString()))/(getCoFromText(re1.toString()))))
                   }
                    if(p3.toString() != ""){
-                       binding.p3Mass.text = (getCoFromText(p3.toString())/getCoFromText(re1.toString()) * (getMassFromText(re1.toString())/getMass(re1.toString()))).toString()
+                       mass3 = ((((getMassFromText(re1.toString()))/(getMass(re1.toString()))) * getMass(p3.toString())) * ((getCoFromText(p3.toString()))/(getCoFromText(re1.toString()))))
                    }
                }
                else{
-                   binding.p1Mass.text = (getCoFromText(p1.toString())/getCoFromText(re3.toString()) * (getMassFromText(re3.toString())/getMass(re3.toString()))).toString()
+                  mass1 = ((((getMassFromText(re3.toString()))/(getMass(re3.toString()))) * getMass(p1.toString())) * ((getCoFromText(p1.toString()))/(getCoFromText(re3.toString()))))
                    if(p2.toString() != ""){
-                       binding.p2Mass.text = (getCoFromText(p2.toString())/getCoFromText(re3.toString()) * (getMassFromText(re3.toString())/getMass(re3.toString()))).toString()
+                      mass2 = ((((getMassFromText(re3.toString()))/(getMass(re3.toString()))) * getMass(p2.toString())) * ((getCoFromText(p2.toString()))/(getCoFromText(re3.toString()))))
                    }
                    if(p3.toString() != ""){
-                       binding.p3Mass.text = (getCoFromText(p3.toString())/getCoFromText(re3.toString()) * (getMassFromText(re3.toString())/getMass(re3.toString()))).toString()
+                      mass3 = ((((getMassFromText(re3.toString()))/(getMass(re3.toString()))) * getMass(p3.toString())) * ((getCoFromText(p3.toString()))/(getCoFromText(re3.toString()))))
                    }
                }
            }
            else{
                if((getMassFromText(re2.toString())/getMass(re2.toString()))/getCoFromText(re2.toString()) <= (getMassFromText(re2.toString())/getMass(re2.toString()))/getCoFromText(re2.toString())) {
-                   binding.p1Mass.text = (getCoFromText(p1.toString())/getCoFromText(re2.toString()) * (getMassFromText(re2.toString())/getMass(re2.toString()))).toString()
+                   mass1 = ((((getMassFromText(re2.toString()))/(getMass(re2.toString()))) * getMass(p1.toString())) * ((getCoFromText(p1.toString()))/(getCoFromText(re2.toString()))))
                    if(p2.toString() != ""){
-                       binding.p2Mass.text = (getCoFromText(p2.toString())/getCoFromText(re2.toString()) * (getMassFromText(re2.toString())/getMass(re2.toString()))).toString()
+                       mass2 = ((((getMassFromText(re2.toString()))/(getMass(re2.toString()))) * getMass(p2.toString())) * ((getCoFromText(p2.toString()))/(getCoFromText(re2.toString()))))
                    }
                    if(p3.toString() != ""){
-                       binding.p3Mass.text = (getCoFromText(p3.toString())/getCoFromText(re2.toString()) * (getMassFromText(re2.toString())/getMass(re2.toString()))).toString()
+                       mass3 = ((((getMassFromText(re2.toString()))/(getMass(re2.toString()))) * getMass(p3.toString())) * ((getCoFromText(p3.toString()))/(getCoFromText(re2.toString()))))
                    }
                }
                else{
-                   binding.p1Mass.text = (getCoFromText(p1.toString())/getCoFromText(re3.toString()) * (getMassFromText(re3.toString())/getMass(re3.toString()))).toString()
+                  mass1 = ((((getMassFromText(re3.toString()))/(getMass(re3.toString()))) * getMass(p1.toString())) * ((getCoFromText(p1.toString()))/(getCoFromText(re3.toString()))))
                    if(p2.toString() != ""){
-                       binding.p2Mass.text = (getCoFromText(p2.toString())/getCoFromText(re3.toString()) * (getMassFromText(re3.toString())/getMass(re3.toString()))).toString()
+                      mass2 = ((((getMassFromText(re3.toString()))/(getMass(re3.toString()))) * getMass(p2.toString())) * ((getCoFromText(p2.toString()))/(getCoFromText(re3.toString()))))
                    }
                    if(p3.toString() != ""){
-                       binding.p3Mass.text = (getCoFromText(p3.toString())/getCoFromText(re3.toString()) * (getMassFromText(re3.toString())/getMass(re3.toString()))).toString()
+                       mass3 = ((((getMassFromText(re3.toString()))/(getMass(re3.toString()))) * getMass(p3.toString())) * ((getCoFromText(p3.toString()))/(getCoFromText(re3.toString()))))
                    }
                }
            }
 
 
 
-
+       binding.p1Mass.text = mass1.toString()
+           if(p2.toString() != "")
+           binding.p2Mass.text = "${"%.2f".format(mass2)} g"
+           if(p3.toString() != "")
+           binding.p3Mass.text = "${"%.2f".format(mass3)} g"
        }
 
 
