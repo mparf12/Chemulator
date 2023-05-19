@@ -21,12 +21,17 @@ class WaveFragment : Fragment() {
     ): View? {
         _binding = FragmentWaveBinding.inflate(inflater, container, false)
         val rootView = binding.root
-       binding.dochSoAlt.setOnClickListener{ view ->
+       binding.calc.setOnClickListener{ view ->
           var freq =  binding.freq.text.toString()
            var en = binding.ene.text.toString()
            var length = binding.length.text.toString()
            if(freq != ""){
-
+            binding.length.setText((expoHandler("3.00E8")/expoHandler(freq)).toString())
+               binding.ene.setText((expoHandler("6.626E-34") * expoHandler(freq)).toString())
+           }
+           if(en != ""){
+               binding.freq.setText((expoHandler(en)/expoHandler("6.626E-34")).toString())
+               binding.length.setText((expoHandler("3.00E8")/expoHandler(binding.freq.text.toString())).toString())
            }
        }
 
@@ -34,8 +39,8 @@ class WaveFragment : Fragment() {
         return rootView
     }
 
-//fun expoHandler(value : String): Double {
-
-//}
+fun expoHandler(value : String): Double {
+    return (value.substring(0, value.indexOf("E")).toDouble() * 10.0.pow((value.substring(value.indexOf('E') + 1, value.length).toInt())))
+}
 
 }

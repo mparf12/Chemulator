@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_calcListFragment_to_stoFragment"
             app:destination="@id/stoFragment" />
+        <action
+            android:id="@+id/action_calcListFragment_to_waveFragment"
+            app:destination="@id/waveFragment" />
     </fragment>
     <fragment
         android:id="@+id/molarMassFragment"
@@ -36,4 +39,9 @@
         android:name="com.example.chemulator.stoFragment"
         android:label="fragment_sto"
         tools:layout="@layout/fragment_sto" />
+    <fragment
+        android:id="@+id/waveFragment"
+        android:name="com.example.chemulator.WaveFragment"
+        android:label="fragment_wave"
+        tools:layout="@layout/fragment_wave" />
 </navigation>

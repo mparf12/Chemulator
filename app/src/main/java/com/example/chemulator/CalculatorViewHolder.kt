@@ -26,6 +26,10 @@ class CalculatorViewHolder(val binding: ListItemLayoutBinding) :
                 binding.root.findNavController()
                     .navigate(R.id.action_calcListFragment_to_stoFragment)
 
+            if(currentCalculator.name == "Wavelength")
+                binding.root.findNavController()
+                    .navigate(R.id.action_calcListFragment_to_waveFragment)
+
 
         }
     }
