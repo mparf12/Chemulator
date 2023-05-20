@@ -33,6 +33,13 @@ class WaveFragment : Fragment() {
                binding.freq.setText((expoHandler(en)/expoHandler("6.626E-34")).toString())
                binding.length.setText((expoHandler("3.00E8")/expoHandler(binding.freq.text.toString())).toString())
            }
+           if(length !=""){
+               binding.freq.setText((expoHandler("3.00E8")/expoHandler(length)).toString())
+               binding.ene.setText((expoHandler("6.626E-34") * expoHandler(binding.freq.text.toString())).toString())
+           }
+           binding.freq.setText(decimalHandeler(binding.freq.text.toString()))
+           binding.ene.setText(decimalHandeler(binding.ene.text.toString()))
+           binding.length.setText(decimalHandeler(binding.length.text.toString()))
        }
 
 
@@ -42,5 +49,8 @@ class WaveFragment : Fragment() {
 fun expoHandler(value : String): Double {
     return (value.substring(0, value.indexOf("E")).toDouble() * 10.0.pow((value.substring(value.indexOf('E') + 1, value.length).toInt())))
 }
+    fun decimalHandeler(value : String): String{
+        return("${"%.5f".format(value.substring(0, value.indexOf("E")).toDouble())}${value.substring(value.indexOf("E"), value.length)}")
+    }
 
 }
