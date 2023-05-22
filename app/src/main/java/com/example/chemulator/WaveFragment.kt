@@ -1,12 +1,14 @@
 package com.example.chemulator
 
+import android.app.AlarmManager
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.chemulator.databinding.FragmentCalcListBinding
 import com.example.chemulator.databinding.FragmentWaveBinding
+import java.util.*
 import kotlin.math.pow
 
 
@@ -43,6 +45,7 @@ class WaveFragment : Fragment() {
        }
 
 
+        setHasOptionsMenu(true)
         return rootView
     }
 
@@ -52,5 +55,15 @@ fun expoHandler(value : String): Double {
     fun decimalHandeler(value : String): String{
         return("${"%.5f".format(value.substring(0, value.indexOf("E")).toDouble())}${value.substring(value.indexOf("E"), value.length)}")
     }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.options_menu,menu)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.
+        onNavDestinationSelected(item, requireView().findNavController())
+                || super.onOptionsItemSelected(item)
+
+    }
 }

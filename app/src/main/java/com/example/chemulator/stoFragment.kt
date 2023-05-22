@@ -2,10 +2,10 @@ package com.example.chemulator
 
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.chemulator.databinding.FragmentCalcListBinding
 import com.example.chemulator.databinding.FragmentCoverBinding
 import com.example.chemulator.databinding.FragmentStoBinding
@@ -153,7 +153,7 @@ class stoFragment : Fragment() {
        }
 
 
-
+        setHasOptionsMenu(true)
         return rootView
     }
     fun getMass(comp: String): Double{
@@ -228,6 +228,17 @@ class stoFragment : Fragment() {
        else{
            return 0.00000000000000000000000000000000000000000000001
         }
+
+    }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.options_menu,menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.
+        onNavDestinationSelected(item, requireView().findNavController())
+                || super.onOptionsItemSelected(item)
 
     }
 
