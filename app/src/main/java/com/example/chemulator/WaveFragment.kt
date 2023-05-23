@@ -8,6 +8,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.chemulator.databinding.FragmentCalcListBinding
 import com.example.chemulator.databinding.FragmentWaveBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import java.util.*
 import kotlin.math.pow
 
@@ -43,6 +45,29 @@ class WaveFragment : Fragment() {
            binding.ene.setText(decimalHandeler(binding.ene.text.toString()))
            binding.length.setText(decimalHandeler(binding.length.text.toString()))
        }
+        val mySnackbar = Snackbar.make(binding.myCoordinatorLayout, "Cleared!", Snackbar.LENGTH_SHORT)
+        binding.clear.setOnClickListener { View ->
+
+                MaterialAlertDialogBuilder(requireContext())
+                    // Title
+                    .setTitle("Wait!")
+                    .setPositiveButton("Yes") { dialog, which ->
+                        binding.length.setText("")
+                        binding.ene.setText("")
+                        binding.freq.setText("")
+                        mySnackbar.show()
+                    }
+
+                    .setNegativeButton("No") { dialog, which ->
+
+                    }
+                    .setMessage("Are you sure you want to clear all fields?")
+
+                    .show()
+
+
+        }
+
 
 
         setHasOptionsMenu(true)
