@@ -3,6 +3,7 @@ package com.example.chemulator
 import android.app.AlarmManager
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
@@ -26,6 +27,7 @@ class WaveFragment : Fragment() {
         _binding = FragmentWaveBinding.inflate(inflater, container, false)
         val rootView = binding.root
        binding.calc.setOnClickListener{ view ->
+           Toast.makeText(this.context, "Done!", Toast.LENGTH_SHORT).show()
           var freq =  binding.freq.text.toString()
            var en = binding.ene.text.toString()
            var length = binding.length.text.toString()

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_coverFragment_to_calcListFragment"
             app:destination="@id/calcListFragment" />
+        <action
+            android:id="@+id/action_coverFragment_to_studyHelpFragment"
+            app:destination="@id/studyHelpFragment" />
     </fragment>
     <fragment
         android:id="@+id/calcListFragment"
@@ -49,4 +52,9 @@
         android:name="com.example.chemulator.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/studyHelpFragment"
+        android:name="com.example.chemulator.StudyHelpFragment"
+        android:label="fragment_study_help"
+        tools:layout="@layout/fragment_study_help" />
 </navigation>

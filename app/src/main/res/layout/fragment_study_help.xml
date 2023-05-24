@@ -4,16 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudyHelpFragment">
-
+    tools:context=".StudyHelpFragment"
+    android:background="#CAF4CC">
 
     <DatePicker
-        android:id="@+id/datePicker"
-        android:layout_width="wrap_content"
+        android:id="@+id/datePicker1"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:datePickerMode="calendar"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:id="@+id/calc"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="416dp"
+        android:text="Help!"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:backgroundTint="#70C573"
+        app:fontFamily="@font/archivo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Advice:"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/archivo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calc" />
+
+    <TextView
+        android:id="@+id/advice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/archivo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

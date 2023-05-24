@@ -3,6 +3,7 @@ package com.example.chemulator
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
@@ -92,6 +93,7 @@ class stoFragment : Fragment() {
         _binding = FragmentStoBinding.inflate(inflater, container, false)
         val rootView = binding.root
        binding.calcy.setOnClickListener{view ->
+           Toast.makeText(this.context, "Done!", Toast.LENGTH_SHORT).show()
            var p1 = binding.p1.text
            var p2 = binding.p2.text
            var p3 = binding.p3.text
@@ -145,9 +147,11 @@ class stoFragment : Fragment() {
 
 
 
-       binding.p1Mass.text = mass1.toString()
+       binding.p1Mass.text = "${"%.2f".format(mass1)} g"
+
            if(p2.toString() != "")
            binding.p2Mass.text = "${"%.2f".format(mass2)} g"
+
            if(p3.toString() != "")
            binding.p3Mass.text = "${"%.2f".format(mass3)} g"
        }

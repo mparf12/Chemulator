@@ -25,6 +25,10 @@ class CoverFragment : Fragment() {
             val action = CoverFragmentDirections.actionCoverFragmentToCalcListFragment()
             rootView.findNavController().navigate(action)
         }
+        binding.button2.setOnClickListener{view ->
+            val action = CoverFragmentDirections.actionCoverFragmentToStudyHelpFragment()
+            rootView.findNavController().navigate(action)
+        }
 
 
         setHasOptionsMenu(true)

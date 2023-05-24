@@ -5,6 +5,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import android.view.animation.AnimationUtils
 import android.widget.SeekBar
+import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.chemulator.databinding.FragmentMolarMassBinding
@@ -95,7 +96,7 @@ class MolarMassFragment : Fragment() {
             var comp = binding.viewtime.text
             var mass = 0.0
             var umHelloChris = false
-
+            Toast.makeText(this.context, "Done!", Toast.LENGTH_SHORT).show()
 
             for (i in 0..comp.length) {
 umHelloChris = false
