@@ -43,8 +43,8 @@ if(curMonth != month){
           else if(abs(curDay-(day+e)) > 7){
               binding.advice.text = "You are getting close to your test day. Try reviewing every day for 30 minutes, increasing it to 1 hour as you get much closer. Complete all review material and if necessary find more online. Make sure to ask your teacher if you are unsure about anything. Good Luck!"
           }
-          else if(abs(curDay-(day+e)) > 2){
-              binding.advice.text = "You are extremly close to your test day. Try reviewing material for 1 hour every day, making sure you are in a space that is free of distractions. If any extra review material is avaiable, make sure that you do all of it. Before going into the test, make sure your head is clear. Good Luck!"
+          else if(abs(curDay-(day+e)) > 0){
+              binding.advice.text = "You are very close to your test day. Try reviewing material for 1 hour every day, making sure you are in a space that is free of distractions. If any extra review material is avaiable, make sure that you do all of it. Before going into the test, make sure your head is clear. Good Luck!"
           }
           else if(abs(curDay-(day+e)) == 0){
               binding.advice.text = "Yikes, it's test day! Eat a healthy breakfast and try clearing your head before going into your test. As long as you are prepared, you will do well. Good Luck!"
