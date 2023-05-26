@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import com.example.chemulator.databinding.FragmentWaveBinding
 import com.example.chemulator.databinding.FragmentWeatherBinding
 
@@ -12,7 +13,7 @@ import com.example.chemulator.databinding.FragmentWeatherBinding
 class WeatherFragment : Fragment() {
     private var _binding: FragmentWeatherBinding? = null
     private val binding get() = _binding!!
-
+    private val viewModel: LocationViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
