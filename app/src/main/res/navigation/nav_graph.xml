@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_calcListFragment_to_waveFragment"
             app:destination="@id/waveFragment" />
+        <action
+            android:id="@+id/action_calcListFragment_to_isotopeFragment"
+            app:destination="@id/isotopeFragment" />
     </fragment>
     <fragment
         android:id="@+id/molarMassFragment"
@@ -57,4 +60,9 @@
         android:name="com.example.chemulator.StudyHelpFragment"
         android:label="fragment_study_help"
         tools:layout="@layout/fragment_study_help" />
+    <fragment
+        android:id="@+id/isotopeFragment"
+        android:name="com.example.chemulator.IsotopeFragment"
+        android:label="fragment_isotope"
+        tools:layout="@layout/fragment_isotope" />
 </navigation>

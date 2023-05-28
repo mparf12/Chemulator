@@ -30,6 +30,10 @@ class CalculatorViewHolder(val binding: ListItemLayoutBinding) :
                 binding.root.findNavController()
                     .navigate(R.id.action_calcListFragment_to_waveFragment)
 
+            if(currentCalculator.name == "my ass")
+                binding.root.findNavController()
+                    .navigate(R.id.action_calcListFragment_to_isotopeFragment)
+
 
         }
     }

@@ -9,4 +9,3 @@ class LocationViewModel : ViewModel() {
     val location: LiveData<String>
         get() = _location
 }
-}
