@@ -96,7 +96,7 @@ class MolarMassFragment : Fragment() {
             var comp = binding.viewtime.text
             var mass = 0.0
             var umHelloChris = false
-            Toast.makeText(this.context, "Done!", Toast.LENGTH_SHORT).show()
+
 
             for (i in 0..comp.length) {
 umHelloChris = false
@@ -172,6 +172,12 @@ umHelloChris = false
             binding.mass.visibility = View.VISIBLE
             val animationFadeIn = AnimationUtils.loadAnimation(this.context, R.anim.fade_in)
             binding.mass.startAnimation(animationFadeIn)
+            if(mass == 0.0){
+                Toast.makeText(this.context, "Compound entered wrong", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Toast.makeText(this.context, "Done!", Toast.LENGTH_SHORT).show()
+            }
         }
         setHasOptionsMenu(true)
         setUpSeekBar()

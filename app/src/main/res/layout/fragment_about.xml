@@ -15,7 +15,6 @@
         android:id="@+id/button4"
         android:layout_width="130dp"
         android:layout_height="70dp"
-        android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:text="Call"
         android:textSize="25sp"
@@ -23,7 +22,8 @@
         app:backgroundTint="#70C573"
         app:fontFamily="@font/archivo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView8"
@@ -49,19 +49,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="130dp"
-        android:layout_height="70dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="Email"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:backgroundTint="#70C573"
-        app:fontFamily="@font/archivo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
