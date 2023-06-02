@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import com.example.chemulator.databinding.FragmentIsotopeBinding
 import com.example.chemulator.databinding.FragmentWaveBinding
 
@@ -95,8 +96,15 @@ binding.calc.setOnClickListener{view ->
     for(element in elements){
        if(element.symbol == temp.substring(0, temp.indexOf("-"))){
            binding.pro.text = element.num.toString()
+           binding.pro.visibility = View.VISIBLE
+           val animationFadeIn = AnimationUtils.loadAnimation(this.context, R.anim.fade_in)
+           binding.pro.startAnimation(animationFadeIn)
            binding.pro3.text = element.num.toString()
+           binding.pro3.visibility = View.VISIBLE
+           binding.pro3.startAnimation(animationFadeIn)
            binding.pro2.text = (temp.substring(temp.indexOf("-")+1, temp.length).toInt() - element.num).toString()
+           binding.pro2.visibility = View.VISIBLE
+           binding.pro2.startAnimation(animationFadeIn)
        }
     }
 }

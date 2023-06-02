@@ -3,6 +3,7 @@ package com.example.chemulator
 import android.app.AlarmManager
 import android.os.Bundle
 import android.view.*
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -46,6 +47,16 @@ class WaveFragment : Fragment() {
            binding.freq.setText(decimalHandeler(binding.freq.text.toString()))
            binding.ene.setText(decimalHandeler(binding.ene.text.toString()))
            binding.length.setText(decimalHandeler(binding.length.text.toString()))
+           binding.freq.visibility = View.VISIBLE
+           val animationFadeIn = AnimationUtils.loadAnimation(this.context, R.anim.fade_in)
+           binding.freq.startAnimation(animationFadeIn)
+
+           binding.ene.visibility = View.VISIBLE
+           binding.ene.startAnimation(animationFadeIn)
+
+           binding.length.visibility = View.VISIBLE
+
+           binding.length.startAnimation(animationFadeIn)
        }
         val mySnackbar = Snackbar.make(binding.myCoordinatorLayout, "Cleared!", Snackbar.LENGTH_SHORT)
         binding.clear.setOnClickListener { View ->
