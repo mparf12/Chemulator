@@ -1,5 +1,6 @@
 package com.example.chemulator
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,7 +14,7 @@ import kotlin.math.abs
 class StudyHelpFragment : Fragment() {
     private var _binding: FragmentStudyHelpBinding? = null
     private val binding get() = _binding!!
-
+    lateinit var mediaPlayer: MediaPlayer
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,6 +50,8 @@ if(curMonth != month){
           else if(abs(curDay-(day+e)) == 0){
               binding.advice.text = "Yikes, it's test day! Eat a healthy breakfast and try clearing your head before going into your test. As long as you are prepared, you will do well. Good Luck!"
           }
+          //mediaPlayer = MediaPlayer.create(context, R.raw."sound goes here")
+          mediaPlayer.start()
       }
 
 

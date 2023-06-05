@@ -3,6 +3,7 @@ package com.example.chemulator
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -148,12 +149,24 @@ class stoFragment : Fragment() {
 
 
        binding.p1Mass.text = "${"%.2f".format(mass1)} g"
+           binding.p1Mass.visibility = View.VISIBLE
+           val animationFadeIn = AnimationUtils.loadAnimation(this.context, R.anim.fade_in)
+           binding.p1Mass.startAnimation(animationFadeIn)
+           if(p2.toString() != "") {
+               binding.p2Mass.text = "${"%.2f".format(mass2)} g"
+               binding.p2Mass.visibility = View.VISIBLE
+               val animationFadeIn = AnimationUtils.loadAnimation(this.context, R.anim.fade_in)
+               binding.p1Mass.startAnimation(animationFadeIn)
+           }
 
-           if(p2.toString() != "")
-           binding.p2Mass.text = "${"%.2f".format(mass2)} g"
 
-           if(p3.toString() != "")
-           binding.p3Mass.text = "${"%.2f".format(mass3)} g"
+           if(p3.toString() != "") {
+               binding.p3Mass.text = "${"%.2f".format(mass3)} g"
+               binding.p3Mass.visibility = View.VISIBLE
+               val animationFadeIn = AnimationUtils.loadAnimation(this.context, R.anim.fade_in)
+               binding.p1Mass.startAnimation(animationFadeIn)
+           }
+
        }
 
 
