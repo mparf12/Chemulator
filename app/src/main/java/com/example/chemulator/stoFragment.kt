@@ -1,20 +1,17 @@
 package com.example.chemulator
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import com.example.chemulator.databinding.FragmentCalcListBinding
-import com.example.chemulator.databinding.FragmentCoverBinding
 import com.example.chemulator.databinding.FragmentStoBinding
 
 
 class stoFragment : Fragment() {
-    var cmon = 2
+    var safelock = 2
     val elements = listOf(
         Element("H", 1.008,1),
         Element("He", 4.003,2),
@@ -175,9 +172,9 @@ class stoFragment : Fragment() {
     }
     fun getMass(comp: String): Double{
         var mass = 0.0
-        var umHelloChris = false
+        var safetest = false
         for (i in 0..comp.length) {
-            umHelloChris = false
+            safetest = false
             //two letter elements
             for(element in elements){
                 if (i+2 <= comp.length) {
@@ -187,23 +184,23 @@ class stoFragment : Fragment() {
 
                             if(i + 4 <= comp.length && comp.substring(i + 2, i + 4).toIntOrNull() != null){
                                 mass += element.mass * comp.substring(i + 2, i + 4).toDouble()
-                                umHelloChris = true
+                                safetest = true
                             }
                             else{
                                 mass += element.mass * comp.substring(i + 2, i + 3).toDouble()
-                                umHelloChris = true
+                                safetest = true
                             }
 
                         } else {
                             mass += element.mass
-                            umHelloChris = true
+                            safetest = true
                         }
                     }
                 }
             }
             // single letter elements
             for(element in elements) {
-                if (umHelloChris == false) {
+                if (safetest == false) {
                     if (i + 1 <= comp.length) {
                         if (element.symbol == comp.substring(i, i + 1)) {
                             if (i + 2 <= comp.length && comp.substring(i + 1, i + 2)

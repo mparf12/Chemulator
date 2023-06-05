@@ -24,11 +24,9 @@ class StudyHelpFragment : Fragment() {
         val rootView = binding.root
         var curDay = binding.datePicker1.dayOfMonth
         var curMonth = binding.datePicker1.month
-        var curYear = binding.datePicker1.year
-      binding.calc.setOnClickListener{ view->
+        binding.calc.setOnClickListener{ view->
           var day = binding.datePicker1.dayOfMonth
           var month = binding.datePicker1.month
-          var year = binding.datePicker1.year
           var e = 0
 if(curMonth != month){
     e = 31
@@ -50,7 +48,7 @@ if(curMonth != month){
           else if(abs(curDay-(day+e)) == 0){
               binding.advice.text = "Yikes, it's test day! Eat a healthy breakfast and try clearing your head before going into your test. As long as you are prepared, you will do well. Good Luck!"
           }
-          //mediaPlayer = MediaPlayer.create(context, R.raw."sound goes here")
+          mediaPlayer = MediaPlayer.create(context, R.raw.ding)
           mediaPlayer.start()
       }
 

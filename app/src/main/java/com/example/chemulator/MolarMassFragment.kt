@@ -9,11 +9,10 @@ import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.chemulator.databinding.FragmentMolarMassBinding
-import kotlin.math.roundToLong
 
 
 class MolarMassFragment : Fragment() {
-    var cmon = 2
+    var safelock = 2
     val elements = listOf(
         Element("H", 1.008,1),
         Element("He", 4.003,2),
@@ -95,11 +94,11 @@ class MolarMassFragment : Fragment() {
         binding.calc.setOnClickListener { view ->
             var comp = binding.viewtime.text
             var mass = 0.0
-            var umHelloChris = false
+            var safetest = false
 
 
             for (i in 0..comp.length) {
-umHelloChris = false
+safetest = false
                 //two letter elements
                  for(element in elements){
                      if (i+2 <= comp.length) {
@@ -109,23 +108,23 @@ umHelloChris = false
 
                                 if(i + 4 <= comp.length && comp.substring(i + 2, i + 4).toIntOrNull() != null){
                                     mass += element.mass * comp.substring(i + 2, i + 4).toDouble()
-                                    umHelloChris = true
+                                    safetest = true
                                     }
                                     else{
                                     mass += element.mass * comp.substring(i + 2, i + 3).toDouble()
-                                    umHelloChris = true
+                                    safetest = true
                                 }
 
                              } else {
                                  mass += element.mass
-                                 umHelloChris = true
+                                 safetest = true
                              }
                          }
                      }
                  }
                 // single letter elements
                     for(element in elements) {
-                        if (umHelloChris == false) {
+                        if (safetest == false) {
                             if (i + 1 <= comp.length) {
                                 if (element.symbol == comp.substring(i, i + 1)) {
                                     if (i + 2 <= comp.length && comp.substring(i + 1, i + 2)
@@ -151,23 +150,23 @@ umHelloChris = false
 
             }
 
-              if(cmon == 0)
+              if(safelock == 0)
             binding.mass.text = "${"%.0f".format(mass)} grams"
-            if(cmon == 1)
+            if(safelock == 1)
                 binding.mass.text = "${"%.1f".format(mass)} grams"
-            if(cmon == 2)
+            if(safelock == 2)
                 binding.mass.text = "${"%.2f".format(mass)} grams"
-            if(cmon == 3)
+            if(safelock == 3)
                 binding.mass.text = "${"%.3f".format(mass)} grams"
-            if(cmon == 4)
+            if(safelock == 4)
                 binding.mass.text = "${"%.4f".format(mass)} grams"
-            if(cmon == 5)
+            if(safelock == 5)
                 binding.mass.text = "${"%.5f".format(mass)} grams"
-            if(cmon == 6)
+            if(safelock == 6)
                 binding.mass.text = "${"%.6f".format(mass)} grams"
-            if(cmon == 7)
+            if(safelock == 7)
                 binding.mass.text = "${"%.7f".format(mass)} grams"
-            if(cmon == 8)
+            if(safelock == 8)
                 binding.mass.text = "${"%.8f".format(mass)} grams"
             binding.mass.visibility = View.VISIBLE
             val animationFadeIn = AnimationUtils.loadAnimation(this.context, R.anim.fade_in)
@@ -190,7 +189,7 @@ umHelloChris = false
         binding.decBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, newProgressValue: Int, fromUser: Boolean) {
           binding.decimal.text = newProgressValue.toString()
-           cmon = newProgressValue
+           safelock = newProgressValue
 
 
             }
