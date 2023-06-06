@@ -22,17 +22,12 @@ class AboutFragment : Fragment() {
         val rootView = binding.root
 
 binding.button4.setOnClickListener{view ->
-     dialPhoneNumber("(570) 290-3489")
+    val number = Uri.parse("tel:5702903489")
+    val callIntent = Intent(Intent.ACTION_DIAL, number)
+    startActivity(callIntent)
 }
         return rootView
     }
-    fun dialPhoneNumber(phoneNumber: String) {
-        val intent = Intent(Intent.ACTION_DIAL).apply {
-            data = Uri.parse("tel:$phoneNumber")
-        }
-        if (intent.resolveActivity(requireActivity().packageManager) != null) {
-            startActivity(intent)
-        }
-    }
+
 
 }

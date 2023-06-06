@@ -172,10 +172,10 @@ safetest = false
             val animationFadeIn = AnimationUtils.loadAnimation(this.context, R.anim.fade_in)
             binding.mass.startAnimation(animationFadeIn)
             if(mass == 0.0){
-                Toast.makeText(this.context, "Compound entered wrong", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this.context, getString(R.string.compound_entered_wrong), Toast.LENGTH_SHORT).show()
             }
             else{
-                Toast.makeText(this.context, "Done!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this.context, getString(R.string.done), Toast.LENGTH_SHORT).show()
             }
         }
         setHasOptionsMenu(true)

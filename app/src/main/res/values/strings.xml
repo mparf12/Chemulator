@@ -2,4 +2,7 @@
     <string name="app_name">Chemulator</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="email">nparf12@gmail.com</string>
+    <string name="compound_entered_wrong">Compound entered wrong</string>
+    <string name="done">Done!</string>
+    <string name="are_you_sure_you_want_to_clear_all_fields">Are you sure you want to clear all fields?</string>
 </resources>

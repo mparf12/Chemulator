@@ -74,7 +74,7 @@ class WaveFragment : Fragment() {
                     .setNegativeButton("No") { dialog, which ->
 
                     }
-                    .setMessage("Are you sure you want to clear all fields?")
+                    .setMessage(getString(R.string.are_you_sure_you_want_to_clear_all_fields))
 
                     .show()
 
